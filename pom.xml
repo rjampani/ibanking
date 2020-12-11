@@ -4,6 +4,7 @@
     <groupId>ibanking.com</groupId>
     <artifactId>ibanking</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <name>ibanking</name>
     <packaging>war</packaging>
 
     <dependencies>
@@ -46,6 +47,6 @@
             </plugin>
 
         </plugins>
-
+        <finalName>ibanking</finalName>
     </build>
 </project>
