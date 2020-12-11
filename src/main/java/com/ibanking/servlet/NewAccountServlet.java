@@ -22,6 +22,9 @@ public class NewAccountServlet extends HttpServlet {
             props.load(this.getClass().getClassLoader().getResourceAsStream("db.properties"));
             driverClassName = props.getProperty("db.driverClassName");
             url = props.getProperty("db.url");
+            if(System.getenv("DB_HOST") != null) {
+            	url.replace("localhost", System.getenv("DB_HOST"));
+            }
             username = props.getProperty("db.username");
             password = props.getProperty("db.password");
         } catch (IOException e) {
