@@ -1,0 +1,39 @@
+version: "3"
+
+services: 
+  ibankingdb: 
+    image: mysql
+    environment: 
+      - MYSQL_ROOT_PASSWORD=inetsolv
+    volumes: 
+      - ./src/main/db:/docker-entrypoint-initdb.d
+      - ibankingdb_vol:/var/lib/mysql
+    networks: 
+      - ibanking_net
+
+  ibankingweb: 
+    image: ibankingweb:1.0
+    depends_on: 
+      - ibankingdb
+    #ports: 
+    #  - "8080"   #This will expose the port 5000 of the container to an ephemeral unallocated port on the host machine
+    expose: 
+      - "8080"
+    networks: 
+      - ibanking_net
+
+  ibankinglb: 
+    image: nginx
+    volumes: 
+      - ./src/main/scripts/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:  
+      - ibankingweb
+    ports: 
+      - "80:80"
+    networks: 
+      - ibanking_net
+networks: 
+  ibanking_net: {}
+
+volumes: 
+  ibankingdb_vol: {}

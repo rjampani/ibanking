@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config| 
     config.vm.define "db-server" do |db| 
         db.vm.box = "ubuntu/bionic64"
-        db.vm.hostname = "db-server"
+        db.vm.hostname = "ibankingdb"
         db.vm.synced_folder ".", "/vagrant"
         db.vm.network "private_network", ip: "192.168.84.2", 
         virtualbox__intnet: "ibanking"
@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
 
     config.vm.define "web-server" do |web| 
         web.vm.box = "ubuntu/bionic64"
-        web.vm.hostname = "web-server"
+        web.vm.hostname = "ibankingweb"
         web.vm.synced_folder ".", "/vagrant"
 
         web.vm.network "forwarded_port", guest: "8080", host:"8088", host_ip: "127.0.0.1"
