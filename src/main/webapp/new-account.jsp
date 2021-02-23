@@ -25,7 +25,7 @@
 	        Server IP: <%=request.getLocalAddr()%><br/>
 	        Server HostName: <%=request.getLocalName()%><br/>
 	        Server Port: <%=request.getLocalPort()%><br/>
-	        Server IP Address HostAddress: <%=InetAddress.getLocalHost().getHostAddress() %><br/>
+	        Server IP Address: <%=InetAddress.getLocalHost().getHostAddress() %><br/>
 	        Server HostName: <%=InetAddress.getLocalHost().getHostName() %>
         </div>
     </body>
