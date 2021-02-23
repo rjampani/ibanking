@@ -22,11 +22,11 @@
 	            <input type="submit" value="Open-Account" style="padding: 5px 5px; font-size: 18px; float: right; margin-bottom: 10px"/>
 	        </form>
 	        <hr style="clear: both;"/>
-	        request.getLocalAddr(): <%=request.getLocalAddr()%><br/>
-	        request.getLocalName(): <%=request.getLocalName()%><br/>
-	        request.getLocalPort(): <%=request.getLocalPort()%><br/>
-	        InetAddress HostAddress: <%=InetAddress.getLocalHost().getHostAddress() %><br/>
-	        InetAddress HostName: <%=InetAddress.getLocalHost().getHostName() %>
+	        Server IP: <%=request.getLocalAddr()%><br/>
+	        Server HostName: <%=request.getLocalName()%><br/>
+	        Server Port: <%=request.getLocalPort()%><br/>
+	        Server IP Address HostAddress: <%=InetAddress.getLocalHost().getHostAddress() %><br/>
+	        Server HostName: <%=InetAddress.getLocalHost().getHostName() %>
         </div>
     </body>
 </html>
